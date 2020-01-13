@@ -1,0 +1,391 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700);
+body {
+  font-family: sans-serif;
+  background: #F2F3F7;
+  color:black;
+}
+
+
+#menu {
+  background: #DE4152;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  transition: all 0.7s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1100;
+}
+#menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+#menu.open li:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+#menu.open li:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+#menu.open li:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+#menu.open li:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+#menu.open li:nth-child(5) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+#menu.open li:nth-child(6) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+#menu.open li:nth-child(7) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+#menu.open li:nth-child(8) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+#menu.open li:nth-child(9) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+#menu.open li:nth-child(10) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+#menu.open li {
+  -webkit-animation-duration: 1.0s;
+          animation-duration: 1.0s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+}
+#menu ul:hover a {
+  opacity: 0.5;
+}
+#menu ul a {
+  -webkit-transform: translateZ(0);
+  transition: opacity 0.3s ease-in-out;
+}
+#menu ul a:hover {
+  opacity: 1;
+}
+#menu .main-nav {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+#menu .main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#menu .main-nav a {
+  color: #ffffff;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#menu .main-nav a:first {
+  padding-top: 0;
+}
+#menu .menu-footer {
+  padding: 2rem;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+#menu .menu-footer ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#menu .menu-footer ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+#menu .menu-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.toggle-menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  /*height: 50px;*/
+  outline: none;
+  padding: 0;
+  pointer-events: initial;
+  position: relative;
+  vertical-align: middle;
+  width: 50px;
+  z-index: 1110;
+}
+.toggle-menu span {
+  background-color: black;
+  content: "";
+  display: block;
+  height: 2px;
+  left: calc(50% - 13px );
+  position: absolute;
+  top: calc(50% - 1px );
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  -webkit-transform 0.2s linear;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear, -webkit-transform 0.2s linear;
+  width: 26px;
+}
+.toggle-menu span:before, .toggle-menu span:after {
+  background-color: black;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  -webkit-transform 0.2s linear;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear;
+  transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out,  transform 0.2s linear, -webkit-transform 0.2s linear;
+  width: 26px;
+}
+.toggle-menu span:before {
+  top: 7px;
+}
+.toggle-menu span:after {
+  top: -7px;
+}
+.toggle-menu.active span {
+  background-color: transparent;
+  transition: background 0.2s ease-out;
+}
+.toggle-menu.active span:before, .toggle-menu.active span:after {
+  transition: top 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
+  transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+  transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
+}
+.toggle-menu.active span:before {
+  top: 0;
+  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+          transform: rotate3d(0, 0, 1, -45deg);
+}
+.toggle-menu.active span:after {
+  top: 0;
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+          transform: rotate3d(0, 0, 1, 45deg);
+}
+
+/* New layout */
+
+#container {
+  max-width: 512px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+
+  display: block;
+  margin: 64px auto 0 auto;
+  max-width: 400px;
+}
+
+#name {
+  font-weight: normal;
+  font-size: 32px;
+  margin: 0;
+}
+
+#name a:link,
+#name a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#name a:hover,
+#name a:active {
+  text-decoration: underline;
+}
+
+#tagline {
+  min-height: 20px;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #444;
+}
+
+#tagline a {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+
+ul#postlist {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Post */
+
+/* Make links bold gray */
+#content a {
+  color: #555;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#content a:hover {
+  text-decoration: underline;
+}
+
+div#content h1#posttitle {
+  font-size: 24px;
+  margin: 16px 0 4px 0;
+}
+
+span#postdate {
+  display: inline-block;
+  font-size: 12px;
+}
+
+div#content {
+  font-size: 14px;
+}
+
+/* Hugo puts <code> tags inside <pre> tags, so apply this style only to
+   independent <code> tags inside paragraphs */
+div#content p code {
+  background-color: #F0F0F0;
+  padding: 2px;
+  border-radius: 2px;
+  /* Calculated from #content's font-size + 2*padding */
+  line-height: 18px;
+}
+
+div#content pre {
+  background-color: #F0F0F0;
+  padding: 4px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+div#content h1 {
+  font-size: 20px;
+}
+
+div#content h2 {
+  font-size: 18px;
+}
+
+div#content h3 {
+  font-size: 16px;
+}
+
+div#content h4 {
+  font-size: 14px;
+}
+
+div#content h5 {
+  font-size: 13px;
+}
+
+div#content h6 {
+  font-size: 12px;
+}
+
+div#content hr {
+  border: none;
+  border-top: 1px solid silver;
+}
+
+/* Center images
+   Note: Avoid raw <img>s in blog posts, though, because they stretch the page
+   when they're too wide for narrow viewports. Use figures[1] (styled below)
+   instead.
+   1; https://gohugo.io/extras/shortcodes/#figure */
+div#content img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Center figures */
+div#content figure {
+  display: block;
+  margin: 0;
+  overflow-x: auto;
+}
+
+/* Home */
+
+.recent-pane {
+  margin: 0;
+  display: inline-block;
+  width: 240px;
+  vertical-align: top;
+  padding: 0 8px;
+}
+
+.recent-blog ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.recent-blog blockquote {
+  font-style: italic;
+  margin: 4px 0 8px 0;
+  font-size: 12px;
+  border-left: 4px solid #eee;
+  padding: 0 0 0 8px;
+}
+
+div#content h2.recent-title {
+  color: #333;
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.recent-date {
+  font-size: 12px;
+}
+
+.recent-git ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+#content a.recent-git-summary {
+  font-weight: normal;
+  color: black;
+  font-family: monospace;
+}
+
+.recent-git li {
+  margin: 0 0 8px 0;
+}
+
+/* vim: set ts=2 sw=2 : */
+
